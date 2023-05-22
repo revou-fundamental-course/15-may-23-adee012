@@ -45,7 +45,12 @@
         <hr />
         <br />
         <h1 class="title-hitung">Hitung Luas Persegi</h1>
-        <input type="text" placeholder="Nilai Sisi" id="nilai-luas" />
+        <input
+          type="text"
+          placeholder="Nilai Sisi"
+          id="nilai-luas"
+          onkeypress="return hanyaAngka(event)"
+        />
 
         <!-- result luas start -->
         <div class="desc" id="result-luas"></div>
@@ -73,7 +78,12 @@
         <hr />
         <br />
         <h1 class="title-hitung">Hitung Keliling Persegi</h1>
-        <input type="text" placeholder="Nilai Sisi" id="nilai-keliling" />
+        <input
+          type="text"
+          placeholder="Nilai Sisi"
+          id="nilai-keliling"
+          onkeypress="return hanyaAngka(event)"
+        />
 
         <!-- result keliling start -->
         <div class="desc" id="result-keliling"></div>
