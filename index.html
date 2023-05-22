@@ -1,23 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Kalkulator Persegi</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Matematik</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <h1>Kalkulator Persegi</h1>
-    <div class="container">
-      <label for="side">Panjang Sisi:</label>
-      <input type="number" id="side" />
-      <button onclick="calculate()">Hitung</button>
-      <br />
-      <label for="area">Luas:</label>
-      <input type="text" id="area" disabled />
-      <br />
-      <label for="perimeter">Keliling:</label>
-      <input type="text" id="perimeter" disabled />
-    </div>
+    <header>
+      <h1>Katik</h1>
+      <h3>Kalkulator Matematik</h3>
+    </header>
+    <section class="first-section">
+      <div class="welcome">
+        <h1>Welcome to Katik</h1>
+        <p>Hai Sobat, Selamat datang di Katik :]</p>
+        <p>
+          Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas
+          dan keliling bangun datar
+        </p>
+        <div class="persegi">
+          <p>persegi</p>
+        </div>
+        <div class="p-panjang">
+          <p>p.panjang</p>
+        </div>
+      </div>
 
-    <script src="script.js"></script>
+      <!-- card hitung luas start -->
+      <div class="luas card">
+        <div class="title">
+          <h1>Luas Persegi</h1>
+        </div>
+        <img src="/assets/images/Frame 1.png" alt="" />
+        <div class="desc">
+          <p>Rumus Luas Persegi Yaitu :</p>
+          <b><p class="rumus">L = S x S</p></b>
+          <p>Di mana :</p>
+          <p>L = Luas</p>
+          <p>S = Sisi</p>
+        </div>
+        <br />
+        <hr />
+        <br />
+        <h1 class="title-hitung">Hitung Luas Persegi</h1>
+        <input type="text" placeholder="Nilai Sisi" id="nilai-luas" />
+
+        <!-- result luas start -->
+        <div class="desc" id="result-luas"></div>
+        <!-- result luas end -->
+
+        <button class="hitung-luas" onclick="luas()">Hitung</button>
+        <button class="reset-luas" onclick="resetLuas()">Reset</button>
+      </div>
+      <!-- card hitung luas end -->
+
+      <!-- card hitung keliling start -->
+      <div class="keliling card">
+        <div class="title">
+          <h1>Keliling Persegi</h1>
+        </div>
+        <img src="/assets/images/Frame 1.png" alt="" />
+        <div class="desc">
+          <p>Rumus Keliling Persegi Yaitu :</p>
+          <b><p class="rumus">K = 4 x S</p></b>
+          <p>Di mana :</p>
+          <p>K = Keliling</p>
+          <p>S = Sisi</p>
+        </div>
+        <br />
+        <hr />
+        <br />
+        <h1 class="title-hitung">Hitung Keliling Persegi</h1>
+        <input type="text" placeholder="Nilai Sisi" id="nilai-keliling" />
+
+        <!-- result keliling start -->
+        <div class="desc" id="result-keliling"></div>
+        <!-- result keliling end -->
+
+        <button class="hitung-keliling" onclick="keliling()">Hitung</button>
+        <button class="reset-keliling" onclick="resetkeliling()">Reset</button>
+      </div>
+      <!-- card hitung keliling end -->
+    </section>
+    <footer><p>Copyright &copy; 2023 Ade Dwi Putra</p></footer>
+
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
