@@ -13,7 +13,8 @@
       <h1>Katik</h1>
       <h3>Kalkulator Matematik</h3>
     </header>
-    <section class="first-section">
+
+    <section class="first-section" id="section-hide">
       <div class="welcome">
         <h1>Welcome to Katik</h1>
         <p>Hai Sobat, Selamat datang di Katik :]</p>
@@ -21,79 +22,191 @@
           Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas
           dan keliling bangun datar
         </p>
-        <div class="persegi">
-          <p>persegi</p>
-        </div>
-        <div class="p-panjang">
-          <p>p.panjang</p>
-        </div>
+        <button id="persegi" onclick="hidePersegiPanjang()">Persegi</button>
+
+        <button id="p-panjang" onclick="hidePersegi()">Persegi Panjang</button>
       </div>
 
-      <!-- card hitung luas start -->
-      <div class="luas card">
-        <div class="title">
-          <h1>Luas Persegi</h1>
-        </div>
-        <img src="/assets/images/Frame 1.png" alt="" />
-        <div class="desc">
-          <p>Rumus Luas Persegi Yaitu :</p>
-          <b><p class="rumus">L = S x S</p></b>
-          <p>Di mana :</p>
-          <p>L = Luas</p>
-          <p>S = Sisi</p>
-        </div>
-        <br />
-        <hr />
-        <br />
-        <h1 class="title-hitung">Hitung Luas Persegi</h1>
-        <input
-          type="text"
-          placeholder="Nilai Sisi"
-          id="nilai-luas"
-          onkeypress="return hanyaAngka(event)"
-        />
+      <!-- Luas dan Keliling Persegi Start -->
+      <div id="katik-persegi">
+        <!-- card hitung luas Persegi start -->
+        <div class="luas card">
+          <div class="title">
+            <h1>Luas Persegi</h1>
+          </div>
+          <img src="/assets/images/Frame 1.png" alt="" />
+          <div class="desc">
+            <p>Rumus Luas Persegi Yaitu :</p>
+            <b><p class="rumus">L = S x S</p></b>
+            <p>Di mana :</p>
+            <p>L = Luas</p>
+            <p>S = Sisi</p>
+          </div>
+          <br />
+          <hr />
+          <br />
+          <h1 class="title-hitung">Hitung Luas Persegi</h1>
+          <input
+            type="text"
+            placeholder="Nilai Sisi"
+            id="nilai-luas"
+            onkeypress="return hanyaAngka(event)"
+          />
 
-        <!-- result luas start -->
-        <div class="desc" id="result-luas"></div>
-        <!-- result luas end -->
+          <!-- result luas start -->
+          <div class="desc" id="result-luas"></div>
+          <!-- result luas end -->
 
-        <button class="hitung-luas" onclick="luas()">Hitung</button>
-        <button class="reset-luas" onclick="resetLuas()">Reset</button>
+          <button class="submit hitung-luas" onclick="luas()">Hitung</button>
+          <button class="hapus reset-luas" onclick="resetLuas()">Reset</button>
+        </div>
+        <!-- card hitung luas Persegi end -->
+
+        <!-- card hitung keliling Persegi start -->
+        <div class="keliling card">
+          <div class="title">
+            <h1>Keliling Persegi</h1>
+          </div>
+          <img src="/assets/images/Frame 1.png" alt="" />
+          <div class="desc">
+            <p>Rumus Keliling Persegi Yaitu :</p>
+            <b><p class="rumus">K = 4 x S</p></b>
+            <p>Di mana :</p>
+            <p>K = Keliling</p>
+            <p>S = Sisi</p>
+          </div>
+          <br />
+          <hr />
+          <br />
+          <h1 class="title-hitung">Hitung Keliling Persegi</h1>
+          <input
+            type="text"
+            placeholder="Nilai Sisi"
+            id="nilai-keliling"
+            onkeypress="return hanyaAngka(event)"
+          />
+
+          <!-- result keliling start -->
+          <div class="desc" id="result-keliling"></div>
+          <!-- result keliling end -->
+
+          <button class="submit hitung-keliling" onclick="keliling()">
+            Hitung
+          </button>
+          <button class="hapus reset-keliling" onclick="resetkeliling()">
+            Reset
+          </button>
+        </div>
+        <!-- card hitung keliling Persegi end -->
       </div>
-      <!-- card hitung luas end -->
+      <!-- Luas dan Keliling Persegi End -->
 
-      <!-- card hitung keliling start -->
-      <div class="keliling card">
-        <div class="title">
-          <h1>Keliling Persegi</h1>
+      <!-- Luas dan Keliling Persegi Panjang Start -->
+      <div id="hiden">
+        <!-- card hitung luas Persegi Panjang start -->
+        <div class="luas card">
+          <div class="title">
+            <h1>Luas Persegi Panjang</h1>
+          </div>
+          <img src="/assets/images/p-panjang.png" alt="" />
+          <div class="desc">
+            <p>Rumus Luas Persegi Panjang Yaitu :</p>
+            <b><p class="rumus">LPP = P x L</p></b>
+            <p>Di mana :</p>
+            <p>LPP = Luas Persegi Panjang</p>
+            <p>P = Panjang</p>
+            <p>L = Lebar</p>
+          </div>
+          <br />
+          <hr />
+          <br />
+          <h1 class="title-hitung">Hitung Luas Persegi Panjang</h1>
+          <input
+            type="text"
+            placeholder="Nilai Panjang"
+            id="nilai-panjang"
+            onkeypress="return hanyaAngka(event)"
+          />
+          <br />
+          <input
+            type="text"
+            placeholder="Nilai Lebar"
+            id="nilai-lebar"
+            onkeypress="return hanyaAngka(event)"
+          />
+
+          <!-- result luas start -->
+          <div class="desc" id="result-luas-persegiPanjang"></div>
+          <!-- result luas end -->
+
+          <button
+            class="submit hitung-luas-persegiPanjang"
+            onclick="luasPpanjang()"
+          >
+            Hitung
+          </button>
+
+          <button
+            class="hapus reset-luas-persegiPanjang"
+            onclick="resetLuasPpanjang()"
+          >
+            Reset
+          </button>
         </div>
-        <img src="/assets/images/Frame 1.png" alt="" />
-        <div class="desc">
-          <p>Rumus Keliling Persegi Yaitu :</p>
-          <b><p class="rumus">K = 4 x S</p></b>
-          <p>Di mana :</p>
-          <p>K = Keliling</p>
-          <p>S = Sisi</p>
+        <!-- card hitung luas Persegi Panjang end -->
+
+        <!-- card hitung keliling Persegi Panjang start -->
+        <div class="keliling card">
+          <div class="title">
+            <h1>Keliling Persegi Panjang</h1>
+          </div>
+          <img src="/assets/images/p-panjang.png" alt="" />
+          <div class="desc">
+            <p>Rumus Keliling Persegi Panjang Yaitu :</p>
+            <b><p class="rumus">K = (2 x P ) + (2 x L)</p></b>
+            <p>Di mana :</p>
+            <p>K = Keliling</p>
+            <p>P = Panjang</p>
+            <p>L = Lebar</p>
+          </div>
+          <br />
+          <hr />
+          <br />
+          <h1 class="title-hitung">Hitung Keliling Persegi Panjang</h1>
+          <input
+            type="text"
+            placeholder="Nilai Panjang"
+            id="k-nilai-panjang"
+            onkeypress="return hanyaAngka(event)"
+          />
+          <br />
+          <input
+            type="text"
+            placeholder="Nilai Sisi"
+            id="k-nilai-lebar"
+            onkeypress="return hanyaAngka(event)"
+          />
+
+          <!-- result keliling start -->
+          <div class="desc" id="result-keliling-pPanjang"></div>
+          <!-- result keliling end -->
+
+          <button
+            class="submit hitung-keliling-persegiPanjang"
+            onclick="kelilingPpanjang()"
+          >
+            Hitung
+          </button>
+          <button
+            class="hapus reset-keliling-persegiPanjang"
+            onclick="resetkelilingPpanjang()"
+          >
+            Reset
+          </button>
         </div>
-        <br />
-        <hr />
-        <br />
-        <h1 class="title-hitung">Hitung Keliling Persegi</h1>
-        <input
-          type="text"
-          placeholder="Nilai Sisi"
-          id="nilai-keliling"
-          onkeypress="return hanyaAngka(event)"
-        />
-
-        <!-- result keliling start -->
-        <div class="desc" id="result-keliling"></div>
-        <!-- result keliling end -->
-
-        <button class="hitung-keliling" onclick="keliling()">Hitung</button>
-        <button class="reset-keliling" onclick="resetkeliling()">Reset</button>
+        <!-- card hitung keliling Persegi Panjang end -->
       </div>
-      <!-- card hitung keliling end -->
+      <!-- Luas dan Keliling Persegi Panjang End -->
     </section>
     <footer><p>Copyright &copy; 2023 Ade Dwi Putra</p></footer>
 
